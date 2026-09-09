@@ -10,8 +10,9 @@ Plain HTML / CSS / JS, no build step. Hosted on GitHub Pages.
 | File | Purpose |
 |------|---------|
 | `index.html` | The whole page: hero, day schedule, format & Stableford scoring, MatchPlay note, course + hole-by-hole carousel, banquet, registration form |
-| `styles.css` | Classic golf-tournament styling (parchment + pine green + gold, serif type) |
+| `styles.css` | Bold modern tournament styling (NDC green + light grey, Barlow Condensed / Barlow) |
 | `script.js` | Builds the 18-hole carousel and handles the registration form via Formspree AJAX |
+| `assets/drobak-golf.webp` | Hero photograph (stone footbridge at Drøbak Golfklubb). Replace this file to change the hero image — keep the name. |
 | `.nojekyll` | Tells GitHub Pages to serve files as-is |
 
 ## Registration form
@@ -34,6 +35,10 @@ manage the form at <https://formspree.io>. To point at a different form, replace
   scorecard table lower in `index.html` mirrors it; update both if pars change.
 - **Schedule, fee, format text** — in `index.html`, sections `#day` / `#format`.
 - **Scoring app link** — `https://matchplay.bradford.no`, in `#scoring` and the footer.
+- **Hero image** — replace `assets/drobak-golf.webp` (landscape, ~1600px wide).
+  The green duotone treatment is CSS (`.hero-tint` / `.hero-scrim` in `styles.css`).
+- **Layout note** — the design was authored in Claude Design as
+  `Scott Allen Memorial.dc.html`; this repo is the plain static port of it.
 
 ## Local preview
 

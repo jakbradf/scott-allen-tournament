@@ -1,5 +1,5 @@
 /* =========================================================
-   Scott Allen Memorial — carousel + Formspree AJAX
+   Scott Allen Memorial — hole carousel + Formspree AJAX
    ========================================================= */
 (function () {
   "use strict";
@@ -26,10 +26,12 @@
     { n: 18, par: 4, si: 4,  m: 350, note: "A strong closing par 4 back to the clubhouse — and the banquet." }
   ];
 
-  /* ---------- Build carousel ---------- */
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+
   var track = document.getElementById("carTrack");
   var dotsWrap = document.getElementById("carDots");
   var carousel = document.getElementById("holeCarousel");
+  var countEl = document.getElementById("carCount");
 
   if (track && dotsWrap && carousel) {
     var index = 0;
@@ -37,19 +39,20 @@
     HOLES.forEach(function (h, i) {
       var slide = document.createElement("div");
       slide.className = "car-slide";
-      slide.setAttribute("data-holenum", h.n);
       slide.setAttribute("role", "group");
       slide.setAttribute("aria-roledescription", "slide");
       slide.setAttribute("aria-label", "Hole " + h.n + " of 18");
       slide.innerHTML =
-        '<p class="car-kicker">' + (h.n <= 9 ? "Front nine" : "Back nine") + "</p>" +
-        '<h3 class="car-hole-title">The ' + ordinal(h.n) + " hole</h3>" +
-        '<div class="car-stats">' +
+        '<div class="cs-top">' +
+          '<span class="cs-kicker">' + (h.n <= 9 ? "Front nine" : "Back nine") + "</span>" +
+          '<span class="cs-num">' + pad2(h.n) + "</span>" +
+        "</div>" +
+        '<div class="cs-stats">' +
           stat("Par", h.par) +
-          stat("Stroke index", h.si) +
+          stat("Index", h.si) +
           stat("Metres", h.m.toLocaleString("en")) +
         "</div>" +
-        '<p class="car-note">' + h.note + "</p>";
+        '<p class="cs-note">' + h.note + "</p>";
       track.appendChild(slide);
 
       var dot = document.createElement("button");
@@ -61,16 +64,13 @@
 
     var dots = Array.prototype.slice.call(dotsWrap.children);
 
-    function ordinal(n) {
-      var s = ["th", "st", "nd", "rd"], v = n % 100;
-      return n + (s[(v - 20) % 10] || s[v] || s[0]);
-    }
     function stat(lbl, val) {
-      return '<div class="car-stat"><span class="lbl">' + lbl + '</span><span class="val">' + val + "</span></div>";
+      return '<div class="cs-stat"><span class="cs-l">' + lbl + '</span><span class="cs-v">' + val + "</span></div>";
     }
     function go(i) {
       index = (i + HOLES.length) % HOLES.length;
       track.style.transform = "translateX(-" + (index * 100) + "%)";
+      if (countEl) { countEl.textContent = "Hole " + pad2(HOLES[index].n) + " / 18"; }
       dots.forEach(function (d, di) {
         if (di === index) { d.setAttribute("aria-current", "true"); }
         else { d.removeAttribute("aria-current"); }
@@ -86,11 +86,10 @@
       if (e.key === "ArrowRight") { go(index + 1); }
     });
 
-    // Touch / swipe
     var startX = null;
     carousel.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
     carousel.addEventListener("touchend", function (e) {
-      if (startX === null) return;
+      if (startX === null) { return; }
       var dx = e.changedTouches[0].clientX - startX;
       if (Math.abs(dx) > 40) { go(dx < 0 ? index + 1 : index - 1); }
       startX = null;
@@ -109,11 +108,9 @@
       statusEl.className = "form-status";
       statusEl.textContent = "Sending…";
 
-      var data = new FormData(form);
-
       fetch(form.action, {
         method: "POST",
-        body: data,
+        body: new FormData(form),
         headers: { Accept: "application/json" }
       })
         .then(function (res) {
@@ -133,8 +130,7 @@
         })
         .catch(function (err) {
           statusEl.className = "form-status err";
-          statusEl.textContent = err.message +
-            " — or email jakob@ndcconferences.com directly.";
+          statusEl.textContent = err.message + " — or email jakob@ndcconferences.com directly.";
         });
     });
   }

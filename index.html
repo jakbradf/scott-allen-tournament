@@ -10,25 +10,34 @@
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23123f2e'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23cba14b' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%230e1a13'/%3E%3Cpath d='M14 7v26' stroke='%2300a651' stroke-width='3'/%3E%3Cpath d='M14 8l16 5-16 5z' fill='%2300a651'/%3E%3C/svg%3E" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="wordmark" href="#top">
-      <span class="wordmark-monogram">SA</span>
-      <span class="wordmark-text">Scott Allen Memorial</span>
+<!-- reusable mark -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 40 40">
+    <path d="M13 4v33" stroke="currentColor" stroke-width="3.4" stroke-linecap="square" />
+    <path d="M13 5.5l18 5.5-18 5.5z" fill="currentColor" />
+    <circle cx="28" cy="33.5" r="3.4" fill="currentColor" />
+  </symbol>
+</svg>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <svg class="brand-mark"><use href="#mark" /></svg>
+      <span class="brand-name">Scott&nbsp;Allen Memorial</span>
     </a>
-    <nav class="site-nav">
+    <nav class="nav-links">
       <a href="#day">The Day</a>
       <a href="#format">Format</a>
       <a href="#scoring">Scoring</a>
-      <a href="#course">The Course</a>
+      <a href="#course">Course</a>
       <a href="#banquet">Banquet</a>
-      <a class="btn btn-small" href="#register">Register</a>
+      <a class="btn btn-dark btn-sm" href="#register">Register</a>
     </nav>
   </div>
 </header>
@@ -37,241 +46,264 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container hero-inner">
-      <svg class="crest" viewBox="0 0 200 220" role="img" aria-label="Tournament crest">
-        <defs>
-          <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#1c5a43" />
-            <stop offset="1" stop-color="#0d3323" />
-          </linearGradient>
-        </defs>
-        <path d="M100 6 L188 34 V116 C188 168 150 200 100 214 C50 200 12 168 12 116 V34 Z" fill="url(#g)" stroke="#cba14b" stroke-width="3"/>
-        <path d="M100 16 L178 40 V115 C178 161 144 190 100 203 C56 190 22 161 22 115 V40 Z" fill="none" stroke="#cba14b" stroke-width="1" opacity="0.6"/>
-        <!-- crossed clubs -->
-        <g stroke-linecap="round">
-          <path d="M70 150 L128 70" stroke="#e7d9b5" stroke-width="5"/>
-          <path d="M130 150 L72 70" stroke="#e7d9b5" stroke-width="5"/>
-          <path d="M126 66 q10 -6 16 2 q4 8 -6 12 z" fill="#e7d9b5" stroke="none"/>
-          <path d="M74 66 q-10 -6 -16 2 q-4 8 6 12 z" fill="#e7d9b5" stroke="none"/>
-        </g>
-        <circle cx="100" cy="120" r="9" fill="#f6f0e2" stroke="#cba14b" stroke-width="1.5"/>
-        <text x="100" y="52" text-anchor="middle" class="crest-year">EST. 2026</text>
-        <text x="100" y="182" text-anchor="middle" class="crest-loc">DRØBAK</text>
-      </svg>
+    <div class="hero-media" role="img" aria-label="Drøbak Golfklubb"></div>
+    <div class="hero-tint" aria-hidden="true"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
 
-      <p class="eyebrow"><span>NDC presents</span></p>
-      <h1 class="hero-title">The Scott&nbsp;Allen<br />Memorial Tournament</h1>
-      <p class="hero-sub">A fourball memorial &mdash; played for the team and for yourself</p>
-      <hr class="rule" />
-      <p class="hero-meta">
-        <strong>Drøbak Golfklubb</strong>
-        <span class="dot">&bull;</span>
-        Friday 25 September 2026
-        <span class="dot">&bull;</span>
-        Meet 11:00 &nbsp;/&nbsp; Tee off 12:00
-      </p>
-      <div class="hero-actions">
-        <a class="btn" href="#register">Register your entry</a>
-        <a class="btn btn-outline" href="#format">Read the format</a>
+    <div class="hero-body">
+      <p class="kicker"><span class="kicker-tick"></span>NDC presents &middot; Est. 2026</p>
+      <h1 class="hero-title">The Scott Allen<br /><span class="fw">Memorial</span> Tournament</h1>
+      <p class="hero-lead">A fourball memorial at Drøbak Golfklubb &mdash; played for the team and for yourself, over eighteen holes of tight parkland golf.</p>
+      <div class="hero-cta">
+        <a class="btn btn-green" href="#register">Register your entry</a>
+        <a class="btn btn-ghost" href="#format">Read the format</a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hs-label">Venue</span>
+        <span class="hs-value">Drøbak Golfklubb</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hs-label">Date</span>
+        <span class="hs-value">Fri 25 Sept 2026</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hs-label">Meet / Tee off</span>
+        <span class="hs-value">11:00 / 12:00</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hs-label">Format</span>
+        <span class="hs-value">Fourball &middot; Stableford</span>
       </div>
     </div>
   </section>
 
-  <!-- THE DAY -->
-  <section id="day" class="section section-alt">
-    <div class="container">
-      <p class="eyebrow"><span>The Day</span></p>
-      <h2 class="section-title">How the day runs</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Arrival</h3>
-          <p class="card-lead">11:00</p>
-          <p>Meet at the clubhouse at Drøbak Golfklubb. Time to warm up, sort teams and collect your cart.</p>
-        </div>
-        <div class="card">
-          <h3>Tee off</h3>
-          <p class="card-lead">12:00</p>
-          <p>All groups start from Hole&nbsp;1 from midday. Play your way round the full eighteen.</p>
-        </div>
-        <div class="card">
-          <h3>Carts</h3>
-          <p class="card-lead">For every team</p>
-          <p>Every team drives a cart &mdash; included for all players, no need to arrange your own.</p>
-        </div>
-        <div class="card">
-          <h3>Entry fee</h3>
-          <p class="card-lead">500 NOK</p>
-          <p>Covers your round, cart and the tournament. Settled on the day &mdash; details sent after you register.</p>
-        </div>
+  <!-- 01 THE DAY -->
+  <section id="day" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">01 &mdash; The Day</span>
+      <h2 class="sec-title">How the day runs</h2>
+    </div>
+    <div class="grid cells-4">
+      <div class="cell"><span class="plus"></span>
+        <div class="cell-label">Arrival</div>
+        <div class="cell-big">11:00</div>
+        <p>Meet at the clubhouse. Time to warm up, sort teams and collect your cart.</p>
+      </div>
+      <div class="cell"><span class="plus"></span>
+        <div class="cell-label">Tee off</div>
+        <div class="cell-big">12:00</div>
+        <p>All groups start from Hole 1 at midday. Play your way round the full eighteen.</p>
+      </div>
+      <div class="cell"><span class="plus"></span>
+        <div class="cell-label">Carts</div>
+        <div class="cell-big">All in</div>
+        <p>Every team drives a cart &mdash; included for all players, nothing to arrange yourself.</p>
+      </div>
+      <div class="cell cell-dark"><span class="plus"></span>
+        <div class="cell-label">Entry fee</div>
+        <div class="cell-big">500&nbsp;<span class="unit">NOK</span></div>
+        <p>Covers your round, cart and the tournament. Settled on the day.</p>
       </div>
     </div>
   </section>
 
-  <!-- FORMAT & SCORING -->
-  <section id="format" class="section">
-    <div class="container">
-      <p class="eyebrow"><span>Format &amp; Scoring</span></p>
-      <h2 class="section-title">Fourball &mdash; modified Stableford</h2>
+  <!-- 02 FORMAT -->
+  <section id="format" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">02 &mdash; Format</span>
+      <h2 class="sec-title">Fourball, modified Stableford</h2>
+    </div>
+
+    <div class="format-top">
       <div class="prose">
-        <p>Players compete <strong>in teams of two</strong> and <strong>as individuals</strong> at the same time. It is a <strong>fourball</strong>: on every hole, the better of the two team members&rsquo; scores counts toward the team total.</p>
-        <p>Scoring is <strong>modified Stableford</strong>, with extra reward for birdies, eagles and better. Points are awarded on your <strong>gross</strong> score on each hole:</p>
+        <p class="lead">Players compete <strong>in teams of two</strong> and <strong>as individuals</strong> at the same time. On every hole, the better of the two team members&rsquo; scores counts toward the team total.</p>
+        <p>Scoring is modified Stableford, with extra reward for birdies, eagles and better. Points are awarded on your <strong>gross</strong> score on each hole. Double bogey or worse scores nothing &mdash; pick up and move on.</p>
       </div>
 
-      <div class="stableford">
-        <div class="sf-item"><span class="sf-score">Bogey</span><span class="sf-pts">1</span></div>
-        <div class="sf-item"><span class="sf-score">Par</span><span class="sf-pts">2</span></div>
-        <div class="sf-item"><span class="sf-score">Birdie</span><span class="sf-pts">4</span></div>
-        <div class="sf-item"><span class="sf-score">Eagle</span><span class="sf-pts">6</span></div>
-        <div class="sf-item"><span class="sf-score">Albatross</span><span class="sf-pts">8</span></div>
-        <div class="sf-item sf-hio"><span class="sf-score">Hole&#8209;in&#8209;One</span><span class="sf-pts">10</span></div>
+      <div class="points"><span class="plus"></span><span class="plus plus-tr"></span><span class="plus plus-bl"></span><span class="plus plus-br"></span>
+        <div class="points-head">Points table &middot; gross</div>
+        <div class="pt"><span>Bogey</span><span class="pt-val">1</span></div>
+        <div class="pt"><span>Par</span><span class="pt-val">2</span></div>
+        <div class="pt pt-good"><span>Birdie</span><span class="pt-val">4</span></div>
+        <div class="pt pt-good"><span>Eagle</span><span class="pt-val">6</span></div>
+        <div class="pt pt-good"><span>Albatross</span><span class="pt-val">8</span></div>
+        <div class="pt pt-good"><span>Hole-in-one</span><span class="pt-val">10</span></div>
       </div>
-      <p class="fine">Double bogey or worse scores 0 points on the hole &mdash; pick up and move on.</p>
+    </div>
 
-      <h3 class="sub-title">Two scoring rounds</h3>
-      <div class="cards cards-2">
-        <div class="card">
-          <h3>Category 1 &mdash; Gross</h3>
-          <p>Most Stableford points collected over the eighteen holes. No handicap adjustment &mdash; raw points, best player wins.</p>
-        </div>
-        <div class="card">
-          <h3>Category 2 &mdash; Net</h3>
-          <p>Your Stableford points <strong>plus your handicap</strong>, added at the end. This levels the field between low and high handicappers.</p>
-          <p class="example"><strong>For example:</strong> a player off <strong>18</strong> who records eighteen bogeys scores 18&nbsp;points&nbsp;+&nbsp;18&nbsp;=&nbsp;<strong>36</strong>. A scratch player who records eighteen pars scores 36&nbsp;+&nbsp;0&nbsp;=&nbsp;<strong>36</strong>. Even race.</p>
-        </div>
+    <div class="grid cats">
+      <div class="cell">
+        <div class="cell-label">Category 1</div>
+        <h3 class="cat-name">Gross</h3>
+        <p>Most Stableford points collected over the eighteen holes. No handicap adjustment &mdash; raw points, best player wins.</p>
+      </div>
+      <div class="cell">
+        <div class="cell-label">Category 2</div>
+        <h3 class="cat-name">Net</h3>
+        <p>Your Stableford points plus your handicap, added at the end. This levels the field between low and high handicappers.</p>
+        <p class="cat-eg"><strong>For example:</strong> a player off 18 who records eighteen bogeys scores 18&nbsp;+&nbsp;18&nbsp;=&nbsp;<strong class="hl">36</strong>. A scratch player who records eighteen pars scores 36&nbsp;+&nbsp;0&nbsp;=&nbsp;<strong class="hl">36</strong>. Even race.</p>
       </div>
     </div>
   </section>
 
-  <!-- SCORING APP -->
-  <section id="scoring" class="section section-green">
-    <div class="container narrow center">
-      <p class="eyebrow eyebrow-light"><span>Keeping Score</span></p>
-      <h2 class="section-title light">MatchPlay for the live scores</h2>
-      <p class="prose-light">We&rsquo;ll run scoring through the <strong>MatchPlay</strong> app. Every player enters their scores there as you go, so the leaderboard is live all afternoon.</p>
-      <p class="prose-light">Please <strong>also keep an old-school paper scorecard</strong> as a backup &mdash; mark each other&rsquo;s cards the traditional way and hand them in at the end.</p>
-      <a class="btn btn-gold" href="https://matchplay.bradford.no" target="_blank" rel="noopener">Open matchplay.bradford.no</a>
+  <!-- 03 SCORING -->
+  <section id="scoring" class="sec-green">
+    <div class="green-inner">
+      <div class="green-text">
+        <span class="sec-num light">03 &mdash; Keeping score</span>
+        <h2 class="sec-title light">Live scores in <span class="fw">MatchPlay</span></h2>
+        <p class="lead light">Every player enters their scores in the app as you go, so the leaderboard is live all afternoon &mdash; better-ball totals and both categories updating hole by hole.</p>
+        <p class="light-dim">Please also keep an old-school paper scorecard as a backup. Mark each other&rsquo;s cards the traditional way and hand them in at the end.</p>
+        <a class="btn btn-white" href="https://matchplay.bradford.no" target="_blank" rel="noopener">Open matchplay.bradford.no</a>
+      </div>
+      <div class="green-box"><span class="plus light"></span><span class="plus plus-tr light"></span><span class="plus plus-bl light"></span><span class="plus plus-br light"></span>
+        <span class="app-mark">MatchPlay</span>
+        <span class="app-url">matchplay.bradford.no</span>
+      </div>
     </div>
   </section>
 
-  <!-- THE COURSE -->
-  <section id="course" class="section">
-    <div class="container">
-      <p class="eyebrow"><span>The Course</span></p>
-      <h2 class="section-title">Drøbak Golfklubb</h2>
-      <div class="prose">
-        <p>Founded in 1988 with the full eighteen opening in 1992, Drøbak Golfklubb is an award&#8209;winning <strong>par&nbsp;70 parkland course</strong> set into wooded, rolling ground near the Oslofjord. It measures a compact <strong>5,138&nbsp;metres</strong> &mdash; short on the card, but tight, tree&#8209;lined and well&#8209;bunkered, with water in play early on the 2nd. The back nine is unusual: <strong>not a single par&nbsp;5</strong>, so points are there to be won on the front.</p>
-      </div>
+  <!-- 04 COURSE -->
+  <section id="course" class="sec">
+    <div class="sec-head">
+      <span class="sec-num">04 &mdash; The Course</span>
+      <h2 class="sec-title">Drøbak Golfklubb</h2>
+    </div>
 
-      <!-- Carousel -->
-      <div class="carousel" id="holeCarousel" aria-roledescription="carousel" aria-label="Drøbak Golfklubb hole by hole">
-        <button class="car-arrow car-prev" type="button" aria-label="Previous hole">&#8592;</button>
-        <div class="car-viewport">
-          <div class="car-track" id="carTrack"><!-- slides injected by script.js --></div>
+    <div class="course-prose">
+      <p class="lead">Founded in 1988 with the full eighteen opening in 1992, Drøbak is an award-winning <strong>par 70 parkland course</strong> set into wooded, rolling ground near the Oslofjord.</p>
+      <p>It measures a compact <strong>5,138 metres</strong> &mdash; short on the card, but tight, tree-lined and well-bunkered, with water in play early on the 2nd. The back nine is unusual: not a single par 5, so the points are there to be won on the front.</p>
+    </div>
+
+    <div class="grid stat-row">
+      <div class="cell"><div class="cell-label">Par</div><div class="st-value">70</div></div>
+      <div class="cell"><div class="cell-label">Length</div><div class="st-value">5,138<span class="unit"> m</span></div></div>
+      <div class="cell"><div class="cell-label">Out / In</div><div class="st-value">36 / 34</div></div>
+    </div>
+
+    <!-- Hole-by-hole carousel -->
+    <div class="carousel" id="holeCarousel" aria-roledescription="carousel" aria-label="Drøbak Golfklubb hole by hole">
+      <div class="car-bar">
+        <span class="car-count" id="carCount">Hole 01 / 18</span>
+        <div class="car-navb">
+          <button class="car-btn car-prev" type="button" aria-label="Previous hole">&larr;</button>
+          <button class="car-btn car-next" type="button" aria-label="Next hole">&rarr;</button>
         </div>
-        <button class="car-arrow car-next" type="button" aria-label="Next hole">&#8594;</button>
+      </div>
+      <div class="car-viewport">
+        <div class="car-track" id="carTrack"><!-- slides injected by script.js --></div>
       </div>
       <div class="car-dots" id="carDots" aria-hidden="true"></div>
+    </div>
 
-      <!-- Scorecard -->
-      <h3 class="sub-title">Full scorecard</h3>
-      <div class="table-wrap">
-        <table class="scorecard">
-          <thead>
-            <tr><th>Hole</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="tot">Out</th></tr>
-          </thead>
-          <tbody>
-            <tr><th>Par</th><td>4</td><td>4</td><td>5</td><td>3</td><td>4</td><td>3</td><td>4</td><td>5</td><td>4</td><td class="tot">36</td></tr>
-            <tr><th>Index</th><td>17</td><td>5</td><td>3</td><td>13</td><td>7</td><td>9</td><td>1</td><td>15</td><td>11</td><td class="tot">&mdash;</td></tr>
-            <tr><th>Metres</th><td>277</td><td>352</td><td>439</td><td>137</td><td>251</td><td>179</td><td>335</td><td>443</td><td>341</td><td class="tot">2,754</td></tr>
-          </tbody>
-          <thead>
-            <tr><th>Hole</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th class="tot">In</th></tr>
-          </thead>
-          <tbody>
-            <tr><th>Par</th><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>3</td><td>4</td><td>3</td><td>4</td><td class="tot">34</td></tr>
-            <tr><th>Index</th><td>6</td><td>18</td><td>10</td><td>2</td><td>16</td><td>14</td><td>8</td><td>12</td><td>4</td><td class="tot">&mdash;</td></tr>
-            <tr><th>Metres</th><td>313</td><td>277</td><td>240</td><td>354</td><td>270</td><td>142</td><td>317</td><td>121</td><td>350</td><td class="tot">2,384</td></tr>
-          </tbody>
-          <tfoot>
-            <tr><th>Total</th><td colspan="9">Par 70</td><td class="tot">5,138 m</td></tr>
-          </tfoot>
-        </table>
+    <!-- Full scorecard -->
+    <div class="scorecard-wrap">
+      <table class="scorecard">
+        <tbody>
+          <tr class="sc-holes">
+            <th>Hole</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sc-tot">Out</th>
+          </tr>
+          <tr><td class="sc-row">Par</td><td>4</td><td>4</td><td>5</td><td>3</td><td>4</td><td>3</td><td>4</td><td>5</td><td>4</td><td class="sc-sum">36</td></tr>
+          <tr><td class="sc-row">Index</td><td class="dim">17</td><td class="dim">5</td><td class="dim">3</td><td class="dim">13</td><td class="dim">7</td><td class="dim">9</td><td class="dim">1</td><td class="dim">15</td><td class="dim">11</td><td class="sc-sum dim">&mdash;</td></tr>
+          <tr><td class="sc-row">Metres</td><td>277</td><td>352</td><td>439</td><td>137</td><td>251</td><td>179</td><td>335</td><td>443</td><td>341</td><td class="sc-sum">2,754</td></tr>
+          <tr class="sc-holes">
+            <th>Hole</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th class="sc-tot">In</th>
+          </tr>
+          <tr><td class="sc-row">Par</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>3</td><td>4</td><td>3</td><td>4</td><td class="sc-sum">34</td></tr>
+          <tr><td class="sc-row">Index</td><td class="dim">6</td><td class="dim">18</td><td class="dim">10</td><td class="dim">2</td><td class="dim">16</td><td class="dim">14</td><td class="dim">8</td><td class="dim">12</td><td class="dim">4</td><td class="sc-sum dim">&mdash;</td></tr>
+          <tr><td class="sc-row">Metres</td><td>313</td><td>277</td><td>240</td><td>354</td><td>270</td><td>142</td><td>317</td><td>121</td><td>350</td><td class="sc-sum">2,384</td></tr>
+          <tr class="sc-total"><td colspan="10">Total &middot; Par 70</td><td class="sc-grand">5,138</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="foot-note">Hole lengths from the club scorecard (championship tees). Confirm your playing tees and course handicap on the day.</p>
+  </section>
+
+  <!-- 05 BANQUET -->
+  <section id="banquet" class="sec">
+    <div class="panel"><span class="plus"></span><span class="plus plus-tr"></span><span class="plus plus-bl"></span><span class="plus plus-br"></span>
+      <div class="panel-main">
+        <span class="sec-num">05 &mdash; Afterwards</span>
+        <h2 class="sec-title">The banquet</h2>
+        <p class="lead">When the last card is in, we move to a banquet at Jakob&rsquo;s house &mdash; food, drinks, prize-giving for both categories and the retelling of every missed putt.</p>
+        <p>The address and timing go out to everyone who registers. Tick the banquet box on the form so we cater the right numbers.</p>
       </div>
-      <p class="fine">Hole lengths from the club scorecard (championship tees). Confirm your playing tees and course handicap on the day.</p>
+      <div class="panel-side">
+        <div class="pside-row"><div class="cell-label">Prize-giving</div><div class="pside-val">Gross &amp; Net</div></div>
+        <div class="pside-row"><div class="cell-label">Where</div><div class="pside-val">Jakob&rsquo;s house</div></div>
+        <div class="pside-row"><div class="cell-label">Included</div><div class="pside-val">Food &amp; drinks</div></div>
+      </div>
     </div>
   </section>
 
-  <!-- BANQUET -->
-  <section id="banquet" class="section section-alt">
-    <div class="container narrow center">
-      <p class="eyebrow"><span>Afterwards</span></p>
-      <h2 class="section-title">The banquet</h2>
-      <p class="prose">When the last card is in, we move to <strong>a banquet at Jakob&rsquo;s house</strong> &mdash; food, drinks, prize&#8209;giving for both categories and the retelling of every missed putt. The address and timing go out to everyone who registers.</p>
-      <p class="fine">Tick the banquet box on the form so we cater the right numbers.</p>
-    </div>
-  </section>
-
-  <!-- REGISTER -->
-  <section id="register" class="section section-green">
-    <div class="container narrow">
-      <p class="eyebrow eyebrow-light"><span>Entry</span></p>
-      <h2 class="section-title light">Register</h2>
-      <p class="prose-light center">One entry per player. Register with your partner&rsquo;s name too, or on your own and we&rsquo;ll pair you up.</p>
-
-      <form id="regForm" class="reg-form" action="https://formspree.io/f/mljeoywo" method="POST">
-        <input type="hidden" name="_subject" value="Scott Allen Memorial — new registration" />
-        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" name="Name" type="text" required autocomplete="name" />
+  <!-- 06 REGISTER -->
+  <section id="register" class="sec-dark">
+    <div class="reg-inner">
+      <div class="reg-left">
+        <span class="sec-num bright">06 &mdash; Entry</span>
+        <h2 class="sec-title light reg-h">Register your<br /><span class="fw">entry</span></h2>
+        <p class="lead light">One entry per player. Register with your partner&rsquo;s name too, or on your own and we&rsquo;ll pair you up.</p>
+        <div class="reg-facts">
+          <div class="rf-row"><span>Entry fee</span><span class="rf-v">500 NOK, on the day</span></div>
+          <div class="rf-row"><span>Scoring app</span><span class="rf-v bright-t">MatchPlay</span></div>
         </div>
+      </div>
 
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="Email" type="email" required autocomplete="email" />
-          <p class="hint">So we can send pairings, tee times and the banquet address.</p>
-        </div>
+      <div class="reg-card"><span class="plus light"></span><span class="plus plus-tr light"></span><span class="plus plus-bl light"></span><span class="plus plus-br light"></span>
+        <form id="regForm" class="reg-form" action="https://formspree.io/f/mljeoywo" method="POST">
+          <input type="hidden" name="_subject" value="Scott Allen Memorial — new registration" />
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-        <div class="field">
-          <label for="golfbox">Golfbox ID</label>
-          <input id="golfbox" name="Golfbox ID" type="text" required inputmode="numeric" />
-          <p class="hint">Your GolfBox / handicap number.</p>
-        </div>
+          <div class="field span-2">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="Name" type="text" required autocomplete="name" />
+          </div>
+          <div class="field span-2">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="Email" type="email" required autocomplete="email" />
+            <p class="hint">So we can send pairings, tee times and the banquet address.</p>
+          </div>
+          <div class="field">
+            <label for="f-golfbox">GolfBox ID</label>
+            <input id="f-golfbox" name="Golfbox ID" type="text" required inputmode="numeric" />
+          </div>
+          <div class="field">
+            <label for="f-hcp">HCP</label>
+            <input id="f-hcp" name="HCP" type="number" step="0.1" min="-10" max="54" required />
+          </div>
+          <div class="field span-2">
+            <label for="f-partner">Playing partner <span class="opt">(optional)</span></label>
+            <input id="f-partner" name="Playing partner" type="text" autocomplete="off" />
+          </div>
 
-        <div class="field">
-          <label for="hcp">HCP</label>
-          <input id="hcp" name="HCP" type="number" step="0.1" min="-10" max="54" required />
-        </div>
+          <label class="check span-2">
+            <input type="checkbox" name="Banquet" value="Yes — attending the banquet" />
+            <span>I&rsquo;ll be at the banquet afterwards</span>
+          </label>
 
-        <div class="field field-partner">
-          <label for="partner">Playing partner <span class="opt">(optional)</span></label>
-          <input id="partner" name="Playing partner" type="text" autocomplete="off" />
-        </div>
-
-        <label class="check">
-          <input type="checkbox" name="Banquet" value="Yes — attending the banquet" />
-          <span>I&rsquo;ll be at the banquet afterwards</span>
-        </label>
-
-        <button class="btn btn-gold btn-block" type="submit">Send my registration</button>
-        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-      </form>
+          <button class="btn btn-green btn-block span-2" type="submit">Send my registration</button>
+          <p class="form-status span-2" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="container center">
-    <span class="wordmark-monogram footer-monogram">SA</span>
-    <p class="footer-title">NDC&rsquo;s Scott Allen Memorial Tournament</p>
-    <p class="footer-sub">Drøbak Golfklubb &bull; Friday 25 September 2026</p>
-    <p class="footer-links">
+<footer class="foot">
+  <div class="foot-inner">
+    <svg class="foot-mark"><use href="#mark" /></svg>
+    <div>
+      <div class="foot-name">NDC&rsquo;s Scott Allen Memorial Tournament</div>
+      <div class="foot-sub">Drøbak Golfklubb &middot; Friday 25 September 2026</div>
+    </div>
+    <div class="foot-links">
       <a href="https://drobakgolf.no" target="_blank" rel="noopener">Drøbak Golfklubb</a>
-      <span class="dot">&bull;</span>
       <a href="https://matchplay.bradford.no" target="_blank" rel="noopener">MatchPlay scoring</a>
-    </p>
+    </div>
   </div>
 </footer>
 
