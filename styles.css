@@ -398,6 +398,8 @@ p.lead { margin: 0 0 18px; }
   font-family: var(--cond); font-size: 28px; font-weight: 500; line-height: 1.1;
   text-transform: uppercase; margin-top: 2px;
 }
+.pside-sub { margin-top: 4px; font-size: 14px; color: var(--muted); }
+.pside-val a, .panel-main a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- Register ---------- */
 .sec-dark { margin-top: 92px; background: var(--ink-2); }
