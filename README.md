@@ -1,6 +1,6 @@
 # NDC's Scott Allen Memorial Tournament
 
-Static two-page site with registration for the Scott Allen Memorial golf tournament
+Static three-page site with registration for the Scott Allen Memorial golf tournament
 at Drøbak Golfklubb — Friday 25 September 2026.
 
 Plain HTML / CSS / JS, no build step. Hosted on GitHub Pages.
@@ -11,10 +11,13 @@ Plain HTML / CSS / JS, no build step. Hosted on GitHub Pages.
 |------|---------|
 | `index.html` | Tournament page: hero, day schedule, format & Stableford scoring, Golf Match note, course + hole-by-hole flyover films, banquet, registration form |
 | `about.html` | About Scott page: in memoriam, how he came back to golf, and why the tournament is played ("Why we play"). Shares the header, footer and stylesheet with `index.html` |
-| `styles.css` | Bold modern tournament styling (NDC green + light grey, Barlow Condensed / Barlow) — shared by both pages |
+| `start-list.html` | Start List page: the draw — four flights, eight teams, sixteen players with portraits and handicaps. Filterable by flight. Shares the header, footer and stylesheet with the other pages |
+| `styles.css` | Bold modern tournament styling (NDC green + light grey, Barlow Condensed / Barlow) — shared by all three pages |
 | `script.js` | Builds the 18-hole flyover-film selector and handles the registration form (open/closed toggle + Formspree AJAX). Loaded by `index.html` only |
+| `start-list.js` | Flight filter (All flights / Flight 1–4) for the start list. Loaded by `start-list.html` only |
 | `assets/drobak-golf.webp` | Hero photograph (stone footbridge at Drøbak Golfklubb). Replace this file to change the hero image — keep the name. |
 | `assets/scott-portrait.jpg`, `florida-tee.jpg`, `pair-driver.jpg` | Photos on `about.html`. Pre-compressed / resized — regenerate at similar dimensions if replaced. |
+| `assets/players/` | Sixteen player portraits for the start list, one file per player (Scott Allan and Magnus Kristiansen intentionally share one photo). Crops are tuned per player via inline `object-position` in `start-list.html` — keep those if a photo is replaced. |
 | `assets/brand/` | Golf Match logo assets (marks, lockups, favicon) + `brand/README.md` spec |
 | `.nojekyll` | Tells GitHub Pages to serve files as-is |
 
@@ -50,10 +53,11 @@ manage the form at <https://formspree.io>. To point at a different form, replace
   Jakob Bradford's voice.
 - **Hero image** — replace `assets/drobak-golf.webp` (landscape, ~1600px wide).
   The green duotone treatment is CSS (`.hero-tint` / `.hero-scrim` in `styles.css`).
-- **Nav** — the header menu is duplicated in `index.html` and `about.html` and must
-  stay identical. On `about.html` the "About Scott" item is a non-link `<span class="nav-current">`
-  and the other items point at `index.html#…`. There is no mobile nav yet — below
-  ~720px the non-button links are hidden.
+- **Nav** — the header menu (and the footer link row) is duplicated across `index.html`,
+  `about.html` and `start-list.html` and must stay identical in items and order. On each
+  page, that page's own item is a non-link `<span class="nav-current">` / plain text
+  in the footer, and the rest point at `index.html#…` where needed. There is no mobile
+  nav yet — below ~720px the non-button links are hidden.
 - **Layout note** — the design was authored in Claude Design as
   `Scott Allen Memorial.dc.html` / `About Scott.dc.html`; this repo is the plain
   static port of it.
