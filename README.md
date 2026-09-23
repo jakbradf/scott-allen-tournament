@@ -11,7 +11,7 @@ Plain HTML / CSS / JS, no build step. Hosted on GitHub Pages.
 |------|---------|
 | `index.html` | Tournament page: hero, day schedule, format & Stableford scoring, Golf Match note, course + hole-by-hole flyover films, banquet, registration form |
 | `about.html` | About Scott page: in memoriam, how he came back to golf, and why the tournament is played ("Why we play"). Shares the header, footer and stylesheet with `index.html` |
-| `start-list.html` | Start List page: the draw — four flights, eight teams, sixteen players with portraits and handicaps. Filterable by flight. Shares the header, footer and stylesheet with the other pages |
+| `start-list.html` | Start List page: the draw — five flights, eight teams, seventeen players with portraits and handicaps (Flight 1 and Flight 5 go out as a single team). Filterable by flight. Shares the header, footer and stylesheet with the other pages |
 | `styles.css` | Bold modern tournament styling (NDC green + light grey, Barlow Condensed / Barlow) — shared by all three pages |
 | `script.js` | Builds the 18-hole flyover-film selector and handles the registration form (open/closed toggle + Formspree AJAX). Loaded by `index.html` only |
 | `start-list.js` | Flight filter (All flights / Flight 1–4) for the start list. Loaded by `start-list.html` only |
