@@ -22,7 +22,7 @@
       <img class="brand-mark" src="assets/brand/mark-ink.svg" alt="" />
       <span class="brand-name">Scott&nbsp;Allen Memorial</span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="about.html">About Scott</a>
       <span class="nav-current">Start List</span>
       <a href="index.html#day">The Day</a>
@@ -32,6 +32,9 @@
       <a href="index.html#banquet">Banquet</a>
       <a class="btn btn-dark btn-sm" href="index.html#register">Register</a>
     </nav>
+    <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -393,6 +396,7 @@
   </div>
 </footer>
 
+<script src="nav.js"></script>
 <script src="start-list.js"></script>
 </body>
 </html>

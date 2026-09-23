@@ -14,7 +14,8 @@ Plain HTML / CSS / JS, no build step. Hosted on GitHub Pages.
 | `start-list.html` | Start List page: the draw — five flights, eight teams, seventeen players with portraits and handicaps (Flight 1 and Flight 5 go out as a single team). Filterable by flight. Shares the header, footer and stylesheet with the other pages |
 | `styles.css` | Bold modern tournament styling (NDC green + light grey, Barlow Condensed / Barlow) — shared by all three pages |
 | `script.js` | Builds the 18-hole flyover-film selector and handles the registration form (open/closed toggle + Formspree AJAX). Loaded by `index.html` only |
-| `start-list.js` | Flight filter (All flights / Flight 1–4) for the start list. Loaded by `start-list.html` only |
+| `start-list.js` | Flight filter (All flights / Flight 1–5) for the start list. Loaded by `start-list.html` only |
+| `nav.js` | Mobile hamburger menu (toggle open/close, close on link click / Escape / outside click). Loaded by all three pages |
 | `assets/drobak-golf.webp` | Hero photograph (stone footbridge at Drøbak Golfklubb). Replace this file to change the hero image — keep the name. |
 | `assets/scott-portrait.jpg`, `florida-tee.jpg`, `pair-driver.jpg` | Photos on `about.html`. Pre-compressed / resized — regenerate at similar dimensions if replaced. |
 | `assets/players/` | Sixteen player portraits for the start list, one file per player (Scott Allan and Magnus Kristiansen intentionally share one photo). Crops are tuned per player via inline `object-position` in `start-list.html` — keep those if a photo is replaced. |
@@ -56,8 +57,9 @@ manage the form at <https://formspree.io>. To point at a different form, replace
 - **Nav** — the header menu (and the footer link row) is duplicated across `index.html`,
   `about.html` and `start-list.html` and must stay identical in items and order. On each
   page, that page's own item is a non-link `<span class="nav-current">` / plain text
-  in the footer, and the rest point at `index.html#…` where needed. There is no mobile
-  nav yet — below ~720px the non-button links are hidden.
+  in the footer, and the rest point at `index.html#…` where needed. Below ~720px it
+  collapses into a hamburger menu (`nav.js`, shared by all three pages) — the toggle
+  button and `#navLinks` panel use the same markup/IDs on every page.
 - **Layout note** — the design was authored in Claude Design as
   `Scott Allen Memorial.dc.html` / `About Scott.dc.html`; this repo is the plain
   static port of it.
